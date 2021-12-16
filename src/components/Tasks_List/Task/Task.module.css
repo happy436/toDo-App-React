@@ -1,0 +1,109 @@
+.body{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    border-radius: 20px;
+    background-color: #031956;
+    font-size:1.2rem;
+    transition: all 0.5s;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.body:hover{
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(30, 255, 26, 1);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(30, 255, 26, 1);
+    box-shadow: 0px 0px 15px 3px rgba(30, 255, 26, 1);
+}
+
+/* rgb(29, 100, 255) */
+
+.check{
+    display: block;
+    width: 50%;
+    height: 55%;
+    color:#fff;
+    padding: 10px 0 10px 1.2em;
+}
+
+.check__input{
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.check__box{
+    margin:3px 0 0 -0.7em;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: inherit;
+    border-radius: 50%;
+    border: 1px solid #3341ec;
+    cursor: pointer;
+}
+
+.check__input:checked + .check__box{
+    background:url('./img/img.svg');
+    background-size: 70%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: #3341ec;
+}
+
+.check__input:focus-visible + .check__box{
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(30, 255, 26, 1);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(30, 255, 26, 1);
+    box-shadow: 0px 0px 15px 3px rgba(30, 255, 26, 1);
+    transition:box-shadow 0.3s;
+}
+
+.text{
+    color:#fff; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    margin-left:20px;
+}
+
+.btns{
+    display: flex;
+}
+
+.btns .edit, .delete{
+    width: 30px;
+    height: 30px;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: 0.4s;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.body:hover .edit,.body:hover .delete{
+    opacity: 1;
+}
+
+.edit{
+    border:1px solid yellow;
+}
+
+.delete{
+    border:1px solid red;
+}
+
+.editText{
+    color:#fff; 
+    margin-left:20px;
+    background: inherit;
+    border:none;
+    resize: none;
+    font-size:1.2rem;
+    display: none;
+    height: 100%;
+}
