@@ -1,6 +1,6 @@
 # ToDoList-React
 
-[Pages](https://happy436.github.io/ToDoList-React/)
+[Pages](https://happy436.github.io/toDo-App-React/)
 ## What need to do:
 
 1. Find and redo the design for yourself.
