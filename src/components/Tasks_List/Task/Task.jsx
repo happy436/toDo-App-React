@@ -1,6 +1,7 @@
 import s from "./Task.module.css"
 import React from 'react'
-import { deleteTaskActionCreator } from "../../../redux/taskReducer"
+import { deleteTaskActionCreator, updateTaskBodyActionCreator, updateStatusActionCreator } from "../../../redux/taskReducer"
+import { UilTrashAlt } from '@iconscout/react-unicons'
 
 export function Task(props){
     let status = (props.status === 1) ? "checked" : ""
@@ -9,33 +10,22 @@ export function Task(props){
         props.dispatch(deleteTaskActionCreator(props.id))
     }
 
-    let taskBody = React.createRef()
-    let editBody = React.createRef()
-
-    let edit = () => {
-
-    }
-
-    let editBodyAction = (el) => {
-        /* taskBody.current.style.display = "none"
-        editBody.current.style.display = "inline-block" */
-        debugger
-        let list = el.target.parentNode.parentNode.parentNode
-        console.log(list.children)
-        
+    let onCheckStatus = () => {
+        let id = props.id
+        let status = props.status
+        props.dispatch(updateStatusActionCreator(id, status))
     }
 
     return(
         <div className={s.body} id={props.id} >
             <label className={s.check} >
                 <input type="checkbox" className={s.check__input} defaultChecked={status}/>
-                <span className={s.check__box}></span>
-                <p className={s.text} ref={taskBody}>{props.body}</p>
-                <textarea className={s.editText} ref={editBody} rows="5" value={props.body} onChange={edit}></textarea>
+                <span className={s.check__box} onClick={onCheckStatus}></span>
+                {/* div Заменить на textarea для editTask */}
+                <div className={s.editText}>{props.body}</div>
             </label>
             <div className={s.btns}>
-                <div className={s.edit} onClick={editBodyAction}>E</div>
-                <div className={s.delete} onClick={deleteAction}>D</div>
+                <div className={s.delete} onClick={deleteAction}><UilTrashAlt/></div>
             </div>
         </div>
     )

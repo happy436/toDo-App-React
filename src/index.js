@@ -19,6 +19,6 @@ let reRender = (state) => {
 reRender(store.getState())
 
 store.subscribe(() => {
-    let state = store.getState()
+    let state = localStorage.setItem('reduxState', JSON.stringify(store.getState()))
     reRender(state);
 })
