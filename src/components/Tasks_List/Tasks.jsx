@@ -17,6 +17,7 @@ export function TasksList(props){
     let heightTask = (el) => {
         if(el.target.getAttribute('rows')){
             el.target.removeAttribute('rows')
+            el.target.style.height = "30px"
         } else if(el.target.value === ""){
             el.target.setAttribute("rows", "1")
             el.target.style.height = "30px"
@@ -36,8 +37,10 @@ export function TasksList(props){
 
     let addTask = (el) => {
         let textArea = el.target.parentNode.nextElementSibling
-        textArea.style.height = ''
-        textArea.setAttribute('rows', '1')
+        if(textArea && textArea.style.height > "30px"){
+            textArea.style.height = ''
+            textArea.setAttribute('rows', '1')
+        }
         props.dispatch(addTaskActionCreator())
     }
     
@@ -55,6 +58,7 @@ export function TasksList(props){
                             onChange={onTaskChange}
                             onKeyUp={heightTask}
                             rows="1"
+                            style={{height:"30px"}}
                         ></textarea>
                     </div>  
                 </div>

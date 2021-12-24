@@ -31,15 +31,14 @@ const taskReducer = (state = initialState, action) => {
             }
             return state
         case DELETE_TASK:
-            if(indexTask !== -1){
-                state.tasks.splice(indexTask, 1)
+            if(indexTask(state,action) !== -1){
+                state.tasks.splice(indexTask(state,action), 1)
             } else  {
                 return state
             }
         case UPDATE_NEW_TASK_BODY:
             state.newTaskText = action.newText
             return state
-
         case EDIT_TASK:
             /* let idTask = state.tasks.indexOf(state.tasks.find((el) => {
                 return el.body === action.oldText
