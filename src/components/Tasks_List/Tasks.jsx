@@ -35,13 +35,10 @@ export function TasksList(props){
     }
 
     let addTask = (el) => {
-        let textArea = el.target.nextElementSibling
+        let textArea = el.target.parentNode.nextElementSibling
         textArea.style.height = ''
         textArea.setAttribute('rows', '1')
-        
-        if(el.target.nextElementSibling.value !== ""){
-            props.dispatch(addTaskActionCreator())
-        }
+        props.dispatch(addTaskActionCreator())
     }
     
     return(
@@ -62,7 +59,10 @@ export function TasksList(props){
                     </div>  
                 </div>
                 <hr className={s.hr}/>
-                {taskElement}
+                <ul className={s.taskList}>
+                    {taskElement}
+                </ul>
+                
             </div>
         </div>
     )

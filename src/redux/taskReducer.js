@@ -25,8 +25,10 @@ const taskReducer = (state = initialState, action) => {
                 status:0,
                 body:state.newTaskText,
             }
-            state.tasks.unshift(newTask)
-            state.newTaskText = ""
+            if(state.newTaskText !== ""){
+                state.tasks.unshift(newTask)
+                state.newTaskText = ""
+            }
             return state
         case DELETE_TASK:
             if(indexTask !== -1){
@@ -51,7 +53,6 @@ const taskReducer = (state = initialState, action) => {
         case UPDATE_STATUS:
             let index = indexTask(state,action)
             let status = state.tasks[index].status
-            console.log(index)
             if(index !== -1){
                 if(status === 1){
                     state.tasks[index].status = 0

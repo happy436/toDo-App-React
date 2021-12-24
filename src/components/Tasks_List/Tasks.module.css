@@ -1,6 +1,7 @@
 .body{
     display: flex;
     flex-direction: column;
+    width:90%;
 }
 
 .title{
@@ -13,7 +14,6 @@
 .addTask{
     display: flex;
     align-items: center;
-    width: 500px;
     border-radius: 20px;
     background-color: #031956;
     font-size:1.2rem;
@@ -48,8 +48,6 @@
     height: 30px;
 }
 
-
-
 .hr{
     margin:20px 0 20px 0;
 }
@@ -66,4 +64,27 @@
     outline:none;
     height:100%;
     transition:all 0.3s;
+}
+
+.taskList{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width:768px){
+    .body{
+        width: 500px;
+    }
+    .taskList{
+        display: grid;
+        grid-template-columns: 300px 300px;
+        gap:20px;
+        justify-content: center;
+    }
+}
+
+@media (min-width:1024px){
+    .taskList{
+        grid-template-columns: 450px 450px;
+    }
 }

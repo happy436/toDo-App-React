@@ -17,16 +17,18 @@ export function Task(props){
     }
 
     return(
-        <div className={s.body} id={props.id} >
+        <li className={s.body} id={props.id} >
             <label className={s.check} >
                 <input type="checkbox" className={s.check__input} defaultChecked={status}/>
                 <span className={s.check__box} onClick={onCheckStatus}></span>
                 {/* div Заменить на textarea для editTask */}
-                <div className={s.editText}>{props.body}</div>
+                <div className={s.editText}>
+                    <p>{props.body}</p>
+                </div>
             </label>
             <div className={s.btns}>
                 <div className={s.delete} onClick={deleteAction}><UilTrashAlt/></div>
             </div>
-        </div>
+        </li>
     )
 }

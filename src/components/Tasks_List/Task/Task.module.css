@@ -1,7 +1,6 @@
 .body{
     display: flex;
     align-items: center;
-    width: 500px;
     border-radius: 20px;
     background-color: #031956;
     font-size:1.2rem;
@@ -109,9 +108,10 @@
     resize: none;
     font-size:1.2rem;
     display: block;
-    overflow:hidden;
+    overflow: hidden;
+    overflow-wrap: normal;
     outline:none;
-    width: 100%;
+    width: 90%;
 }
 
 .check__input:checked + .check__box + .editText{
