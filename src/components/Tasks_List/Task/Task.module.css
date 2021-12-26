@@ -109,8 +109,10 @@
     overflow-wrap: break-word;
     outline:none;
     width: 80%;
+    transition: all 0.3s;
 }
 
 .check__input:checked + .check__box + .editText{
     text-decoration: line-through;
+    color:#646674;
 }

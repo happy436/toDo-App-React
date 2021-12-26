@@ -18,13 +18,13 @@
     background-color: #031956;
     font-size:1.2rem;
     transition: all 0.5s;
-    justify-content: space-between;
 }
 
 .addTaskWrapper{
     display: flex;
     align-items: center;
     padding:5px 0 5px 0;
+    width:90%;
 }
 
 .saveBtn{
@@ -62,8 +62,8 @@
     display: block;
     overflow:hidden;
     outline:none;
-    height:100%;
     transition:all 0.3s;
+    width:100%;
 }
 
 .taskList{
