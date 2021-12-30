@@ -7,7 +7,6 @@ export function Task(props){
     let status = (props.status === 1) ? "checked" : ""
 
     let deleteAction = () => {
-        console.log(props.id)
         props.dispatch(deleteTaskActionCreator(props.id))
     }
 
